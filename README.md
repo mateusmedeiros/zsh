@@ -9,10 +9,11 @@ ln -s $(pwd)/.zshrc.zni ~/.zshrc.zni
 ```
 
 ```bash
-cp -R zsh-config/.oh-my-zsh ~
-cp -i zsh-config/agnoster/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
-cd ~/.oh-my-zsh
+cp -i zsh-config/agnoster/\ agnoster.zsh-theme zsh-config/.oh-my-zsh/themes/agnoster.zsh-theme
+cd zsh-config/.oh-my-zsh
 git add themes/agnoster.zsh-theme
 git commit -m "agnoster"
+cd ..
+ln -s $(pwd)/.oh-my-zsh ~
 ```
 
