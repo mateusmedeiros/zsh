@@ -3,9 +3,11 @@ Configurations for zsh.
 ```bash
 git clone --recursive https://github.com/mateusmedeiros/zsh-config.git
 mv ~/.zshrc ~/.zshrc.old
-ln -s $(pwd)/.zshrc ~/.zshrc
+ln -s $(pwd)/.zshrc ~
 mv ~/.zshrc.zni ~/.zshrc.zni.old
-ln -s $(pwd)/.zshrc.zni ~/.zshrc.zni
+ln -s $(pwd)/.zshrc.zni ~
+ln -s $(pwd)/.profile ~
+ln -s $(pwd)/.path ~
 ```
 
 ```bash
