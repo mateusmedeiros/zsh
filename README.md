@@ -8,7 +8,13 @@ mv ~/.zshrc.zni ~/.zshrc.zni.old
 ln -s $(pwd)/.zshrc.zni ~
 ln -s $(pwd)/.profile ~
 ln -s $(pwd)/.path ~
+ln -s $(pwd)/solarized-console.sh ~
 ```
+
+```bash
+yaourt -S powerline-fonts-git
+```
+( https://aur.archlinux.org/packages/powerline-fonts-git/ )
 
 ```bash
 cd zsh-config/.oh-my-zsh
