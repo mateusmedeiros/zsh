@@ -9,6 +9,9 @@ ln -s $(pwd)/.zshrc.zni ~/.zshrc.zni
 ```
 
 ```bash
+cd zsh-config/.oh-my-zsh
+git checkout master
+cd ../..
 cp -i zsh-config/agnoster/\ agnoster.zsh-theme zsh-config/.oh-my-zsh/themes/agnoster.zsh-theme
 cd zsh-config/.oh-my-zsh
 git add themes/agnoster.zsh-theme
