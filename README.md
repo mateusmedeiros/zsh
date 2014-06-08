@@ -2,14 +2,10 @@ Configurations for zsh.
 
 ```bash
 git clone --recursive https://github.com/mateusmedeiros/zsh-config.git
-```
-```bash
 mv ~/.zshrc ~/.zshrc.old
-ln -s {ABSOLUTE PATH TO REPO}/.zshrc ~/.zshrc
-```
-```bash
+ln -s $(pwd)/.zshrc ~/.zshrc
 mv ~/.zshrc.zni ~/.zshrc.zni.old
-ln -s {ABSOLUTE PATH TO REPO}/.zshrc.zni ~/.zshrc.zni
+ln -s $(pwd)/.zshrc.zni ~/.zshrc.zni
 ```
 
 ```bash
