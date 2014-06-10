@@ -99,7 +99,6 @@ autoload -U colors && colors
 
 export EDITOR="vim"
 #export PROMPT="%{$fg[magenta]%}[%U%l%u - %*] %{$reset_color%}%{$fg[yellow]%}%n%{$reset_color%}%B@%b%{$fg[blue]%}%B%d > %b%{$reset_color%}" 
-source ~/.profile
 
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS                                                                                                                                                                                                            
@@ -165,14 +164,20 @@ if [[ $USER != root ]] && [[ $(tty) != *tty* ]]; then
 	fi
 else
 fi
-### tmux end ###
 
-##
 # change font for tty
 if [[ $(tty) == *tty* ]]; then
 	sh $HOME/solarized-console.sh
 	setfont /usr/share/kbd/consolefonts/ter-powerline-v14n.psf.gz
 fi
 
+unsetopt autopushd
+
+source ~/.profile
 source ~/.path
+
+# final
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
