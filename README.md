@@ -3,12 +3,12 @@ Configurations for zsh.
 ```bash
 git clone --recursive https://github.com/mateusmedeiros/zsh-config.git
 mv ~/.zshrc ~/.zshrc.old
-ln -s $(pwd)/.zshrc ~
+ln -s $(pwd)/zsh-config/.zshrc ~
 mv ~/.zshrc.zni ~/.zshrc.zni.old
-ln -s $(pwd)/.zshrc.zni ~
-ln -s $(pwd)/.profile ~
-ln -s $(pwd)/.path ~
-ln -s $(pwd)/solarized-console.sh ~
+ln -s $(pwd)/zsh-config/.zshrc.zni ~
+ln -s $(pwd)/zsh-config/.profile ~
+ln -s $(pwd)/zsh-config/.path ~
+ln -s $(pwd)/zsh-config/solarized-console.sh ~
 ```
 
 ```bash
