@@ -146,8 +146,15 @@ export PATH=$PATH:/opt/java/bin
 
 DEFAULT_USER="doodad"
 
+
+# change font for tty
+if [[ $(tty) == *tty* ]]; then
+	sh $HOME/solarized-console.sh
+	setfont /usr/share/kbd/consolefonts/ter-powerline-v14n.psf.gz
+fi
+
 ### tmux ### { 
-if [[ $USER != root ]] && [[ $(tty) != *tty* ]]; then
+if [[ $USER != root ]] && [[ $(tty) == *tty* ]]; then
 	tmux_count=`tmux ls | wc -l`
 	if [[ "$tmux_count" == "0" ]]; then
 		tmux -2
@@ -164,13 +171,6 @@ if [[ $USER != root ]] && [[ $(tty) != *tty* ]]; then
 	fi
 else
 fi
-
-# change font for tty
-if [[ $(tty) == *tty* ]]; then
-	sh $HOME/solarized-console.sh
-	setfont /usr/share/kbd/consolefonts/ter-powerline-v14n.psf.gz
-fi
-
 unsetopt autopushd
 
 source ~/.profile
