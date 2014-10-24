@@ -2,7 +2,7 @@ Configurations for zsh.
 
 ```bash
 git clone --recursive https://github.com/mateusmedeiros/zsh-config.git
-mv ~/.zshrc ~/.zshrc.old
+mv ~/.zshrc ~/.zshrc.old > /dev/null 2>&1
 ln -s $(pwd)/zsh-config/.zshrc ~
 mv ~/.zshrc.zni ~/.zshrc.zni.old
 ln -s $(pwd)/zsh-config/.zshrc.zni ~
@@ -20,11 +20,17 @@ yaourt -S powerline-fonts-git
 cd zsh-config/.oh-my-zsh
 git checkout master
 cd ../..
-cp -i zsh-config/agnoster/\ agnoster.zsh-theme zsh-config/.oh-my-zsh/themes/agnoster.zsh-theme
+cp -f zsh-config/agnoster/agnoster.zsh-theme zsh-config/.oh-my-zsh/themes/agnoster.zsh-theme
 cd zsh-config/.oh-my-zsh
 git add themes/agnoster.zsh-theme
 git commit -m "agnoster"
 cd ..
 ln -s $(pwd)/.oh-my-zsh ~
+```
+
+```bash
+ln -s $(pwd)/hg-prompt ~
+echo "\n\n[extensions]" >> ~/.hgrc
+echo "\nprompt = $HOME/hg-prompt/prompt.py"
 ```
 
