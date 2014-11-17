@@ -154,7 +154,7 @@ if [[ $(tty) == *tty* ]]; then
 fi
 
 ### tmux ### { 
-if [[ $USER != root ]] && [[ $(tty) == *tty* ]]; then
+if [[ $USER != root ]]; then
 	tmux_count=`tmux ls | wc -l`
 	if [[ "$tmux_count" == "0" ]]; then
 		tmux -2
