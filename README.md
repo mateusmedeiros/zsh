@@ -4,7 +4,7 @@ Configurations for zsh.
 git clone --recursive https://github.com/mateusmedeiros/zsh-config.git
 mv ~/.zshrc ~/.zshrc.old > /dev/null 2>&1
 ln -s $(pwd)/zsh-config/.zshrc ~
-mv ~/.zshrc.zni ~/.zshrc.zni.old
+mv ~/.zshrc.zni ~/.zshrc.zni.old > /dev/null 2>&1
 ln -s $(pwd)/zsh-config/.zshrc.zni ~
 ln -s $(pwd)/zsh-config/.profile ~
 ln -s $(pwd)/zsh-config/.path ~
@@ -30,7 +30,7 @@ ln -s $(pwd)/.oh-my-zsh ~
 
 ```bash
 ln -s $(pwd)/hg-prompt ~
-echo "\n\n[extensions]" >> ~/.hgrc
-echo "\nprompt = $HOME/hg-prompt/prompt.py"
+echo -e "\n\n[extensions]" >> ~/.hgrc
+echo -e "prompt = $HOME/hg-prompt/prompt.py" >> ~/.hgrc
 ```
 
