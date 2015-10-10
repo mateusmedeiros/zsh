@@ -20,7 +20,7 @@ yaourt -S powerline-fonts-git
 cd zsh-config/.oh-my-zsh
 git checkout master
 cd ../..
-cp -f zsh-config/agnoster/agnoster.zsh-theme zsh-config/.oh-my-zsh/themes/agnoster.zsh-theme
+ln -sf ../../agnoster/agnoster.zsh-theme zsh-config/.oh-my-zsh/themes/agnoster.zsh-theme
 cd zsh-config/.oh-my-zsh
 git add themes/agnoster.zsh-theme
 git commit -m "agnoster"
