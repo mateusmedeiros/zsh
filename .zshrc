@@ -51,28 +51,57 @@ source $ZSH/oh-my-zsh.sh
 # (from https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh)
 # -------------------------------------------------------------------
 ex() {
-if [[ -f $1 ]]; then
-case $1 in
-*.tar.bz2) tar xvjf $1;;
-*.tar.gz) tar xvzf $1;;
-*.tar.xz) tar xvJf $1;;
-*.tar.lzma) tar --lzma xvf $1;;
-*.bz2) bunzip $1;;
-*.rar) unrar $1;;
-*.gz) gunzip $1;;
-*.tar) tar xvf $1;;
-*.tbz2) tar xvjf $1;;
-*.tgz) tar xvzf $1;;
-*.zip) unzip $1;;
-*.Z) uncompress $1;;
-*.7z) 7z x $1;;
-*.dmg) hdiutul mount $1;; # mount OS X disk images
-*) echo "'$1' cannot be extracted via >ex<";;
-esac
-else
-echo "'$1' is not a valid file"
-fi
+	if [[ -f $1 ]]; then
+		case $1 in
+			*.tar.bz2) tar xvjf $1;;
+			*.tar.gz) tar xvzf $1;;
+			*.tar.xz) tar xvJf $1;;
+			*.tar.lzma) tar --lzma xvf $1;;
+			*.bz2) bunzip $1;;
+			*.rar) unrar $1;;
+			*.gz) gunzip $1;;
+			*.tar) tar xvf $1;;
+			*.tbz2) tar xvjf $1;;
+			*.tgz) tar xvzf $1;;
+			*.zip) unzip $1;;
+			*.Z) uncompress $1;;
+			*.7z) 7z x $1;;
+			*.dmg) hdiutul mount $1;; # mount OS X disk images
+		*) echo "'$1' cannot be extracted via >ex<";;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
 } 
+
+function detect_node_modules() {
+	emulate -L zsh
+
+	local current_dir="$(pwd)"
+	local has_node_modules=false
+
+	while [[ $current_dir != "/" ]]; do
+		if [[ -d node_modules ]]; then
+			has_node_modules=true
+			break
+		fi
+
+		current_dir=$(dirname $current_dir)
+	done
+
+	if [[ $current_dir != "/" ]]; then
+		if [[ ! -n $___OLD_PATH || $___OLD_PATH != $PATH ]]; then
+			export ___OLD_PATH="$PATH"
+		fi
+		export PATH="$(pwd)/node_modules/.bin:$PATH"
+	else
+		if [[ -n $___OLD_PATH ]]; then
+			export PATH="$___OLD_PATH"
+		fi
+	fi
+}
+
+#chpwd_functions=(${chpwd_functions[@]} "detect_node_modules")
 
 HISTSIZE=10000
 SAVEHIST=9000
@@ -98,13 +127,14 @@ alias vimt='vim +NERDTreeTabsToggle'
 autoload -U colors && colors
 
 export EDITOR="vim"
+export JAVA_HOME="/usr/lib/jvm/java-8-jdk"
 #export PROMPT="%{$fg[magenta]%}[%U%l%u - %*] %{$reset_color%}%{$fg[yellow]%}%n%{$reset_color%}%B@%b%{$fg[blue]%}%B%d > %b%{$reset_color%}" 
 
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS                                                                                                                                                                                                            
 setopt HIST_IGNORE_DUPS 
 
-export PATH=$PATH:/opt/java/bin
+export rvm_ignore_gemrc_issues=1
 
 #experimental 
 #
@@ -145,28 +175,31 @@ export PATH=$PATH:/opt/java/bin
 ## experimental end ##
 
 DEFAULT_USER="doodad"
-
+KEYTIMEOUT=0
 
 # change font for tty
 if [[ $(tty) == *tty* ]]; then
 	sh $HOME/solarized-console.sh
 	setfont /usr/share/kbd/consolefonts/ter-powerline-v14n.psf.gz
+else
+	export TERM="screen-256color"
 fi
 
 ### tmux ### { 
 if [[ $USER != root ]]; then
 	tmux_count=`tmux ls | wc -l`
 	if [[ "$tmux_count" == "0" ]]; then
-		tmux -2
+		tmux -2 new-session -s 'hobby'
 	else
 		if [[ -z "$TMUX" ]]; then
 			if [[ "$tmux_count" == "1" ]]; then
-				session_id=1
+				session_name='work'
 			else
-				session_id=`echo $tmux_count`
+				session_name=`echo $tmux_count`
 			fi
-		tmux -2 new-session -d -s $session_id
-		tmux -2 attach-session -t $session_id
+
+			tmux -2 new-session -d -s $session_name
+			tmux -2 attach-session -t $session_name
 		fi
 	fi
 else
@@ -179,5 +212,5 @@ source ~/.path
 # final
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
