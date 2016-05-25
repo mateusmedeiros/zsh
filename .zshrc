@@ -1,6 +1,5 @@
 ZSH=$HOME/.config/zsh/oh-my-zsh
 ZSH_CUSTOM=$HOME/.config/zsh/custom
-source $ZSH/oh-my-zsh.sh
 
 source $ZDOTDIR/zshrc/functions.sh
 
@@ -13,5 +12,7 @@ if [[ $(tty) != *tty* ]]; then
 fi
 
 source $ZDOTDIR/zshrc/env.sh
-source $ZDOTDIR/zshrc/aliases.sh
 source $ZDOTDIR/zshrc/settings.sh
+
+source $ZSH/oh-my-zsh.sh
+source $ZDOTDIR/zshrc/aliases.sh
