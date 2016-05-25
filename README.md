@@ -11,5 +11,4 @@ Arch
 mkdir -p ~/.local/share/fonts
 cp ~/.config/zsh/fonts/* ~/.local/share/fonts
 fc-cache -fv
-yaourt -S powerline-fonts-git
 ```
