@@ -27,3 +27,7 @@ setopt HIST_IGNORE_DUPS
 
 # Turn off automatically pushing the last directory to the directory stack
 unsetopt AUTOPUSHD
+
+# Emacs is used by default, but if not set before, it will override 
+# things like COMPLETION_WAITING_DOTS
+bindkey -e
