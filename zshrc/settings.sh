@@ -27,10 +27,3 @@ setopt HIST_IGNORE_DUPS
 
 # Turn off automatically pushing the last directory to the directory stack
 unsetopt AUTOPUSHD
-
-
-# temp
-bindkey -e
-bindkey '^[OH' beginning-of-line
-bindkey '^[OF' end-of-line
-bindkey '^[[3~' delete-char

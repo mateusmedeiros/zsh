@@ -16,9 +16,6 @@ plugins=(
   # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#bundler
   bundler
   
-
-  command-not-found
-  
   # Add a simple copyfile function that cats a file to the clipboard
   # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/copyfile/copyfile.plugin.zsh
   copyfile
