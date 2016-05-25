@@ -18,5 +18,4 @@ if [[ $USER != root && $+NEOVIM != 1 ]]; then
       tmux -2 attach-session -t $session_name
     fi
   fi
-else
 fi
