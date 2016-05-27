@@ -27,4 +27,8 @@ plugins=(
   # Autocomplete for npm and some aliases
   # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/npm/npm.plugin.zsh 
   npm
+
+  # Highlighting of commands as they are typed
+  # https://github.com/zsh-users/zsh-syntax-highlighting
+  zsh-syntax-highlighting
 )
