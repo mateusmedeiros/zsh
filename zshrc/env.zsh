@@ -28,5 +28,6 @@ export CDPATH="$HOME/.config:$CDPATH"
 . ${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdf.sh
 . ${XDG_CONFIG_HOME:-$HOME/.config}/asdf/completions/asdf.bash
 
-# rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# chruby
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
