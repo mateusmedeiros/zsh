@@ -22,6 +22,10 @@ setopt HIST_FIND_NO_DUPS
 # Don't save consecutive duplicates on the history
 setopt HIST_IGNORE_DUPS 
 
+# Don't keep history on memory, always access the files directly, on writing and reading
+setopt inc_append_history
+setopt share_history
+
 # Turn off automatically pushing the last directory to the directory stack
 unsetopt AUTOPUSHD
 
