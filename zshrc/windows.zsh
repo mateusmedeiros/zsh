@@ -1,3 +1,9 @@
+alias psql="psql -h localhost"
+
+# windows workspace on CDPATH
+export CDPATH="/mnt/c/Users/Mateus/Workspace:$CDPATH"
+export CDPATH="/mnt/c/Users/Mateus/Workspace/ecostage:$CDPATH"
+
 # don't make the annoying windows beep sound when pressing down, tab, etc
 unsetopt beep
 
