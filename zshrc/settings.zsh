@@ -29,6 +29,9 @@ setopt HIST_IGNORE_DUPS
 setopt inc_append_history
 setopt share_history
 
+# Turn on substitution on the prompt
+setopt prompt_subst
+
 # Turn off automatically pushing the last directory to the directory stack
 unsetopt AUTOPUSHD
 
