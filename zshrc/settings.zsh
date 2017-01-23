@@ -1,3 +1,6 @@
+# Enables Antigen caching
+_ANTIGEN_CACHE_ENABLED="true"
+
 # Display red dots while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
