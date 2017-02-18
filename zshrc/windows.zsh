@@ -1,3 +1,4 @@
+# alias psql so that it doesn't try to connect using an unix socket
 alias psql="psql -h localhost"
 
 # windows workspace on CDPATH
