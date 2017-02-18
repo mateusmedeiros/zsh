@@ -25,9 +25,11 @@ export CDPATH="$HOME/workspace/rust:$CDPATH"
 export CDPATH="$HOME/.config:$CDPATH"
 
 # asdf (Elixir and Erlang version manager)
-. ${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdf.sh
-. ${XDG_CONFIG_HOME:-$HOME/.config}/asdf/completions/asdf.bash
+source ${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdf.sh
 
 # chruby
 source /usr/share/chruby/chruby.sh
 source /usr/share/chruby/auto.sh
+
+# rustup
+source $HOME/.cargo/env

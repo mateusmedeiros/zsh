@@ -1,1 +1,4 @@
-export ZDOTDIR=$HOME/.config/zsh
+ZDOTDIR=$HOME/.config/zsh
+ADOTDIR=$HOME/.config/antigen
+
+source $ZDOTDIR/env.zsh

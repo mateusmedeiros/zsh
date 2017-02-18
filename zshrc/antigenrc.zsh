@@ -31,9 +31,6 @@ antigen bundle npm
 # Highlighting of commands as they are typed   
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Provides nvm as a zsh plugin
-antigen bundle lukechilds/zsh-nvm
-
 # pure theme
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
