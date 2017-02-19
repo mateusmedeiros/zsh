@@ -7,7 +7,7 @@ export JAVA_HOME="/usr/lib/jvm/java-8-jdk"
 # cdpath modifications
 # basically $PATH for cd
 # more info on http://zsh.sourceforge.net/Doc/Release/Parameters.html
-export CDPATH="$HOME/workspace"
+export CDPATH="$HOME/workspace:$CDPATH"
 export CDPATH="$HOME/workspace/saites:$CDPATH"
 export CDPATH="$HOME/workspace/eclipse:$CDPATH"
 export CDPATH="$HOME/workspace/ecostage:$CDPATH"
