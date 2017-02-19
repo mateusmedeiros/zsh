@@ -23,6 +23,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # perl
 export PATH="/usr/bin/core_perl:$PATH"
 
+# composer
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
 # asdf (Elixir and Erlang version manager)
 source ${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdf.sh
 
