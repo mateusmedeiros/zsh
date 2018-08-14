@@ -1,3 +1,6 @@
+.zshrc.zwc
+*.zsh.zwc
+.cache
 .zsh_history
 .zcompdump*
 antigen.zsh

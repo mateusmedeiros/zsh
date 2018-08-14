@@ -31,8 +31,17 @@ antigen bundle npm
 # Highlighting of commands as they are typed   
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# pure theme
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+# fish-like autosuggestion
+# See https://github.com/zsh-users/zsh-autosuggestions for configuration
+antigen bundle zsh-users/zsh-autosuggestions
+
+# fzf (only if installed)
+if ( hash fzf 1>/dev/null 2>&1 ); then
+  # antigen bundle junegunn/fzf
+  antigen bundle ytet5uy4/fzf-widgets
+fi
+
+# spaceship theme
+antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 
 antigen apply
