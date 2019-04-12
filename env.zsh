@@ -53,3 +53,6 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# todo.txt config file on XDG_CONFIG_HOME
+export TODOTXT_CFG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/todo/config"
