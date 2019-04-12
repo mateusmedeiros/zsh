@@ -37,7 +37,6 @@ antigen bundle zsh-users/zsh-autosuggestions
 
 # fzf (only if installed)
 if ( hash fzf 1>/dev/null 2>&1 ); then
-  # antigen bundle junegunn/fzf
   antigen bundle ytet5uy4/fzf-widgets
 fi
 
