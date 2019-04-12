@@ -49,8 +49,14 @@ function heroku() {
 
 function dpostgres() {
   local interactive=false
+  local interactive_only=false
   if [[ $1 == 'psql' ]]; then
     interactive=true
+  fi
+
+  if [[ $1 == 'force-i' ]]; then
+    shift
+    interactive_only=true
   fi
 
   if [[ $1 == 'force-it' ]]; then
@@ -63,9 +69,11 @@ function dpostgres() {
     interactive=false
   fi
 
-  if $interactive; then
-    docker run --rm -it -v "$(pwd):/directory" -w /directory postgres:10 $@
+  if $interactive_only; then
+    docker run --rm -i -v "$(pwd):/directory" -w /directory postgres:11.2-alpine $@
+  elif $interactive; then
+    docker run --rm -it -v "$(pwd):/directory" -w /directory postgres:11.2-alpine $@
   else
-    docker run --rm -v "$(pwd):/directory" -w /directory postgres:10 $@
+    docker run --rm -v "$(pwd):/directory" -w /directory postgres:11.2-alpine $@
   fi
 }
