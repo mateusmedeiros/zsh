@@ -29,6 +29,9 @@ setopt hist_ignore_dups
 setopt inc_append_history
 setopt share_history
 
+# Allow a command to begin with space to not save it on the history
+setopt histignorespace
+
 # Turn on substitution on the prompt
 setopt prompt_subst
 
@@ -37,6 +40,9 @@ setopt auto_pushd
 
 # Turn on implicit cd
 setopt auto_cd
+
+# * glob will include dot files by default (without needing the D glob qualifier)
+setopt globdots
 
 # Turn on bash completion compatibility mode
 autoload bashcompinit
