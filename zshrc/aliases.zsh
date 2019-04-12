@@ -18,8 +18,14 @@ alias bs='brew search'
 alias dc='docker-compose'
 alias dcrun='docker-compose run --rm'
 
+alias ls='ls -A'
+
+alias mv='mv -i'
+
 alias startinator='tmuxinator start local'
 alias stopinator='tmuxinator stop local'
 
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 alias tmuxnew="tmux new -A -s"
+
+alias todo="todo.sh -c"
