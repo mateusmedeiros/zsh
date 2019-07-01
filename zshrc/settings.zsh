@@ -44,6 +44,9 @@ setopt auto_cd
 # * glob will include dot files by default (without needing the D glob qualifier)
 setopt globdots
 
+# Add some extra functionality to globs (like using ^ to glob all except one thing)
+setopt extendedglob
+
 # Turn on bash completion compatibility mode
 autoload bashcompinit
 bashcompinit

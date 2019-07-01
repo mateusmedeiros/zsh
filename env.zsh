@@ -10,7 +10,9 @@ export EDITOR="nvim"
 export CDPATH="$HOME/Workspace:$CDPATH"
 export CDPATH="$HOME/Workspace/Ecostage:$CDPATH"
 export CDPATH="$HOME/Workspace/Thémata:$CDPATH"
+export CDPATH="$HOME/Workspace/Personal:$CDPATH"
 export CDPATH="$HOME/Workspace/rust:$CDPATH"
+export CDPATH=".:$CDPATH" # This must always be the last one
 
 # gradle
 # export PATH="$HOME/gradle-2.5/bin:$PATH"
@@ -30,11 +32,8 @@ export PATH="/opt/brew/bin:$PATH"
 export PATH="/usr/local/git/bin:$PATH"
 
 # asdf
-source ${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdf.sh
-# asdf global erlang 20 > /dev/null 2>&1
-# asdf global elixir 1.5.2 > /dev/null 2>&1
-# asdf global nodejs 7.10.0 > /dev/null 2>&1
-# asdf global ruby 2.4.1 > /dev/null 2>&1
+# TODO
+# source ${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdf.sh
 
 # rustup
 if [[ -f $HOME/.cargo/env ]]; then
@@ -50,9 +49,15 @@ export ZSH_CACHE_DIR=$ZDOTDIR/.cache
 
 # Android development
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/tools/bin:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
 
 # todo.txt config file on XDG_CONFIG_HOME
 export TODOTXT_CFG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/todo/config"
+
+# The standard dictates that the default should be this if this variable is not
+# set but not everything plays nice with that
+export XDG_CONFIG_HOME="$HOME/.config"
+
+export KUBECONFIG=${XDG_CONFIG_HOME:-$HOME/.config}/kube/config

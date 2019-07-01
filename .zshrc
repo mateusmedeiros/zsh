@@ -21,12 +21,13 @@ fi
 
 # Antigen commands
 antigen init $ZDOTDIR/zshrc/antigenrc.zsh
+source $ZDOTDIR/zshrc/temp.zsh
 
 # Load direnv
 eval "$(direnv hook zsh)"
 
 # Completions
-. ${XDG_CONFIG_HOME:-$HOME/.config}/asdf/completions/asdf.bash
+# . ${XDG_CONFIG_HOME:-$HOME/.config}/asdf/completions/asdf.bash
 
 # Other local scripts
 source $ZDOTDIR/zshrc/aliases.zsh

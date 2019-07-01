@@ -18,9 +18,13 @@ alias bs='brew search'
 alias dc='docker-compose'
 alias dcrun='docker-compose run --rm'
 
-alias ls='ls -A'
+alias gcloudupdate='docker rmi google/cloud-sdk:alpine; docker pull google/cloud-sdk:alpine'
+
+alias ls='ls -Ah'
 
 alias mv='mv -i'
+
+alias rcp='rsync -a --executability'
 
 alias startinator='tmuxinator start local'
 alias stopinator='tmuxinator stop local'
